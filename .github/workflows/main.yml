@@ -1,0 +1,18 @@
+name: java file execution
+on:
+  push:
+    branches: [main]
+jobs: 
+  install_jdk_and_run_the_program:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+    - name: install jdk
+      uses: actions/setup-java@v2
+      with:
+        distribution: adopt
+    - name: execute the java file
+      run: |
+        javac hello.java
+        java hello
