@@ -12,6 +12,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: adopt
+        java version: 11
     - name: execute the java file
       run: |
         javac hello.java
